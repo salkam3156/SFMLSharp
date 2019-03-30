@@ -1,14 +1,14 @@
 ﻿using SFML.Graphics;
 using SFML.System;
-using SFMLCore.Enums;
-using SFMLCore.Interfaces;
+using Game.Enums;
+using Game.Interfaces;
 using SFMLSharp.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using static SFMLCore.Enums.Enums;
+using static Game.Enums.Enums;
 
-namespace SFMLCore
+namespace Game.Core
 {
     internal class Player : IActor
     {

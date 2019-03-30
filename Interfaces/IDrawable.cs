@@ -1,7 +1,7 @@
 ﻿using SFML.Graphics;
 using System;
 
-namespace SFMLCore
+namespace Game.Interfaces
 {
     public interface IDrawable : Drawable, IDisposable
     {

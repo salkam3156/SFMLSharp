@@ -1,4 +1,4 @@
-using SFMLCore.Interfaces;
+using Game.Interfaces;
 
 namespace SFMLSharp.Interfaces
 {

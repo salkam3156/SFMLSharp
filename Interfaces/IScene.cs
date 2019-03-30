@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SFMLCore.Interfaces
+namespace Game.Interfaces
 {
     internal interface IScene
     {

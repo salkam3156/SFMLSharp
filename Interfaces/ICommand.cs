@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using SFMLSharp.Interfaces;
 
-namespace SFMLCore.Interfaces
+namespace Game.Interfaces
 {
     public interface ICommand
     {

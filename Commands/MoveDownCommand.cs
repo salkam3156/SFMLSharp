@@ -1,7 +1,7 @@
-using SFMLCore.Interfaces;
+using Game.Interfaces;
 using SFMLSharp.Interfaces;
 
-namespace SFMLCore
+namespace Game
 {
     internal class MoveDownCommand : ICommand
     {

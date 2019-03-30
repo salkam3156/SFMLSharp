@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using SFML;
 using SFML.Graphics;
 using SFML.Window;
-using SFMLCore;
+using Game;
 
-namespace MainLoop
+namespace Game.Core
 {
     internal class Game
     {

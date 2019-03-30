@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using static SFMLCore.Enums.Enums;
+using static Game.Enums.Enums;
 
-namespace SFMLCore.Interfaces
+namespace Game.Interfaces
 {
     public interface IEntity : IDrawable
     {

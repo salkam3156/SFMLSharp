@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SFMLCore.Interfaces
+namespace Game.Interfaces
 {
     public interface IInputHandler
     {

@@ -1,8 +1,8 @@
 ﻿using SFML.System;
 using SFML.Window;
-using SFMLCore.Interfaces;
+using Game.Interfaces;
 
-namespace SFMLCore
+namespace Game.Core
 {
     public class KeyboardInputHandler : IInputHandler
     {

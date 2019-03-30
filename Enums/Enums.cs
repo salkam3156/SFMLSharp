@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SFMLCore.Enums
+namespace Game.Enums
 {
     public class Enums
     {

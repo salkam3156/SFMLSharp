@@ -1,12 +1,12 @@
 ﻿using SFML.Graphics;
 using SFML.Window;
-using SFMLCore.Interfaces;
+using Game.Interfaces;
 using SFMLSharp.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SFMLCore
+namespace Game.Core
 {
     public class Scene : IScene, IDisposable
     {
@@ -27,7 +27,6 @@ namespace SFMLCore
             window.SetVerticalSyncEnabled(true);
             window.SetMouseCursorVisible(false);
             window.KeyPressed += (o, e) => { if(e.Alt && Keyboard.IsKeyPressed(Keyboard.Key.C)){ window.Close();} };
-            
         }
 
         public void SubscribeElement(IEntity element)
