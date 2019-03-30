@@ -1,6 +1,8 @@
 ﻿using SFML.Graphics;
+using SFML.System;
 using SFMLCore.Enums;
 using SFMLCore.Interfaces;
+using SFMLSharp.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,16 +10,16 @@ using static SFMLCore.Enums.Enums;
 
 namespace SFMLCore
 {
-    internal class Entity : IEntity
+    internal class Player : IActor
     {
-        private readonly Sprite sprite = new Sprite(new Texture(@"Resources/doge.png"));
+        private readonly Sprite sprite;
 
-        public Entity()
+
+        public EntityType GetEntityType()
         {
-
+            return EntityType.Player;
         }
-
-        public Entity(string texture)
+        public Player(string texture)
         {
             sprite = new Sprite(new Texture(texture));
         }
@@ -25,6 +27,15 @@ namespace SFMLCore
         public void Draw(RenderTarget target, RenderStates states)
         {
             sprite.Draw(target, states);
+        }
+        public void MoveLeft()
+        {
+            sprite.Position += new Vector2f(1,0);
+        }
+
+        public void MoveRight()
+        {
+            sprite.Position += new Vector2f(-1, 0);
         }
         
         #region IDisposable Support
@@ -48,13 +59,6 @@ namespace SFMLCore
             Dispose(true);
         }
 
-        public EntityType GetEntityType()
-        {
-            throw new NotImplementedException();
-        }
-
         #endregion
-
-
     }
 }
