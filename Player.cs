@@ -13,7 +13,7 @@ namespace SFMLCore
     internal class Player : IActor
     {
         private readonly Sprite sprite;
-
+        public int Speed{ get; set; } = 10;
 
         public EntityType GetEntityType()
         {
@@ -30,12 +30,12 @@ namespace SFMLCore
         }
         public void MoveLeft()
         {
-            sprite.Position += new Vector2f(1,0);
+            sprite.Position += new Vector2f(-1 * Speed,0);
         }
 
         public void MoveRight()
         {
-            sprite.Position += new Vector2f(-1, 0);
+            sprite.Position += new Vector2f(1 * Speed, 0);
         }
         
         #region IDisposable Support

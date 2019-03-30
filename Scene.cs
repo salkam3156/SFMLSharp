@@ -1,6 +1,7 @@
 ﻿using SFML.Graphics;
 using SFML.Window;
 using SFMLCore.Interfaces;
+using SFMLSharp.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,11 +11,11 @@ namespace SFMLCore
     public class Scene : IScene, IDisposable
     {
         private IList<IDrawable> drawableElements = new List<IDrawable>();
-        private IEntity player;
+        private IActor player;
         private readonly RenderWindow window;
         private readonly IInputHandler inputHandler;
 
-        public Scene(IEntity player, IInputHandler inputHandler)
+        public Scene(IActor player, IInputHandler inputHandler)
         {
             this.inputHandler = inputHandler;
 
@@ -49,7 +50,9 @@ namespace SFMLCore
             {
                 window.DispatchEvents();
 
-                inputHandler.HandleIput();
+                var inputCommand = inputHandler.HandleIput();
+
+                inputCommand?.Execute(player);
 
                 window.Clear();
                 
