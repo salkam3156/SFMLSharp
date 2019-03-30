@@ -11,7 +11,7 @@ namespace MainLoop
     {
         static void Main(string[] args)
         {
-            using (var player = new Player(@"Resources/doge.png"))
+            using (var player = new Player(@"Resources/soldier_shotgun.png"))
             using (var enemy = new Enemy())
             using (var scene = new Scene(player, new KeyboardInputHandler()))
             {

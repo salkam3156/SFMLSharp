@@ -10,7 +10,7 @@ namespace SFMLCore
 {
     internal class Enemy : IEntity
     {
-        private readonly Sprite sprite = new Sprite(new Texture(@"Resources/skewee.jpg"));
+        private readonly Sprite sprite = new Sprite(new Texture(@"Resources/doge.png"));
 
         public Enemy()
         {
