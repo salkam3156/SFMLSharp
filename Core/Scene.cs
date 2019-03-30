@@ -10,7 +10,7 @@ namespace Game.Core
 {
     public class Scene : IScene, IDisposable
     {
-        private IList<IDrawable> drawableElements = new List<IDrawable>();
+        private IList<IEntity> drawableElements = new List<IEntity>();
         private IActor player;
         private readonly RenderWindow window;
         private readonly IInputHandler inputHandler;
