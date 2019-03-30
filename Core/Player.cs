@@ -19,6 +19,7 @@ namespace SFMLCore
         {
             return EntityType.Player;
         }
+        
         public Player(string texture)
         {
             sprite = new Sprite(new Texture(texture));
