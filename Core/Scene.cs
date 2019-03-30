@@ -25,7 +25,8 @@ namespace SFMLCore
 
             window.SetFramerateLimit(60);
             window.SetVerticalSyncEnabled(true);
-            window.KeyPressed += (o, e) => { if(e.Alt){ window.Close();} };
+            window.SetMouseCursorVisible(false);
+            window.KeyPressed += (o, e) => { if(e.Alt && Keyboard.IsKeyPressed(Keyboard.Key.C)){ window.Close();} };
             
         }
 
