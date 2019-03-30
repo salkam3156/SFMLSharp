@@ -10,7 +10,8 @@ namespace SFMLCore.Enums
         {
             Player,
             Enemy,
-            SceneElement
+            SceneElement,
+            Background
         }
     }
 }
