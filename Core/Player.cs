@@ -13,13 +13,17 @@ namespace SFMLCore
     internal class Player : IActor
     {
         private readonly Sprite sprite;
-        public int Speed{ get; set; } = 10;
+        internal Player()
+        {
+
+        }
+        public int Speed { get; set; } = 10;
 
         public EntityType GetEntityType()
         {
             return EntityType.Player;
         }
-        
+
         public Player(string texture)
         {
             sprite = new Sprite(new Texture(texture));
@@ -31,14 +35,23 @@ namespace SFMLCore
         }
         public void MoveLeft()
         {
-            sprite.Position += new Vector2f(-1 * Speed,0);
+            sprite.Position += new Vector2f(-1 * Speed, 0);
         }
 
         public void MoveRight()
         {
             sprite.Position += new Vector2f(1 * Speed, 0);
         }
-        
+        public void MoveDown()
+        {
+            sprite.Position += new Vector2f(0, 1 * Speed);
+        }
+
+        public void MoveUp()
+        {
+            sprite.Position += new Vector2f(0, -1 * Speed);
+        }
+
         #region IDisposable Support
         private bool disposedValue = false; // To detect redundant calls
 

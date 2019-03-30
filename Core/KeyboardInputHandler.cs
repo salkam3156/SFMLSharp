@@ -15,9 +15,20 @@ namespace SFMLCore
             {
                 commandToExecute = new MoveLeftCommand();
             }
-            else if(Keyboard.IsKeyPressed(Keyboard.Key.Right))
+
+            if(Keyboard.IsKeyPressed(Keyboard.Key.Right))
             {
                 commandToExecute = new MoveRightCommand();
+            }
+
+            if (Keyboard.IsKeyPressed(Keyboard.Key.Down))
+            {
+                commandToExecute = new MoveDownCommand();
+            }
+            
+            if (Keyboard.IsKeyPressed(Keyboard.Key.Up))
+            {
+                commandToExecute = new MoveUpCommand();
             }
             
             return commandToExecute;

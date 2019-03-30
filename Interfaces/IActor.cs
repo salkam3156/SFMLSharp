@@ -6,5 +6,7 @@ namespace SFMLSharp.Interfaces
     {
          void MoveLeft();
          void MoveRight();
+         void MoveDown();
+         void MoveUp();
     }
 }
