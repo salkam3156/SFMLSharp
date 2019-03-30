@@ -51,20 +51,24 @@ namespace SFMLCore
                 window.DispatchEvents();
 
                 var inputCommand = inputHandler.HandleIput();
-
                 inputCommand?.Execute(player);
 
-                window.Clear();
-                
-                foreach(var element in drawableElements)
-                {
-                    element.Draw(window, RenderStates.Default);
-                }
-                
-                player.Draw(window, RenderStates.Default);
-
-                window.Display();
+                DrawScene();
             }
+        }
+
+        private void DrawScene()
+        {
+            window.Clear();
+
+            foreach (var element in drawableElements)
+            {
+                element.Draw(window, RenderStates.Default);
+            }
+
+            player.Draw(window, RenderStates.Default);
+
+            window.Display();
         }
 
         #region IDisposable Support
