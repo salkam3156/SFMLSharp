@@ -11,8 +11,8 @@ namespace MainLoop
     {
         static void Main(string[] args)
         {
-            using (var player = new Entity(@"Resources/skewee.jpg"))
-            using (var enemy = new Entity())
+            using (var player = new Player(@"Resources/doge.png"))
+            using (var enemy = new Enemy())
             using (var scene = new Scene(player, new InputHandler()))
             {
                 scene.SubscribeElement(enemy);

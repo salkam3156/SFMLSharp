@@ -55,6 +55,8 @@ namespace SFMLCore
                 {
                     element.Draw(window, RenderStates.Default);
                 }
+                
+                player.Draw(window, RenderStates.Default);
 
                 window.Display();
             }
