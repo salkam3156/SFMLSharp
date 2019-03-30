@@ -1,0 +1,14 @@
+*SFMLSharp.dll
+*SFMLSharp.pdb
+*SFMLSharp.csproj.nuget.cache
+*SFMLSharp.dll
+*SFMLSharp.pdb
+*SFMLSharp.AssemblyInfo.cs
+*SFMLSharp.AssemblyInfoInputs.cache
+*SFMLSharp.assets.cache
+*SFMLSharp.csproj.CoreCompileInputs.cache
+*SFMLSharp.csproj.FileListAbsolute.txt
+*SFMLSharp.csprojAssemblyReference.cache
+obj/*
+bin/*
+*Temporary*
