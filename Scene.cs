@@ -19,7 +19,6 @@ namespace SFMLCore
             this.inputHandler = inputHandler;
 
             this.player = player;
-            drawableElements.Add(player);
 
             window = new RenderWindow(VideoMode.DesktopMode, "SFML");
 
@@ -51,6 +50,8 @@ namespace SFMLCore
 
                 inputHandler.HandleIput();
 
+                window.Clear();
+                
                 foreach(var element in drawableElements)
                 {
                     element.Draw(window, RenderStates.Default);
@@ -74,6 +75,7 @@ namespace SFMLCore
                     foreach(var element in drawableElements)
                     {
                         element.Dispose();
+                        window.Dispose();
                     }
                 }
 
