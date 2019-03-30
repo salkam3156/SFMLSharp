@@ -13,7 +13,7 @@ namespace MainLoop
         {
             using (var player = new Player(@"Resources/doge.png"))
             using (var enemy = new Enemy())
-            using (var scene = new Scene(player, new InputHandler()))
+            using (var scene = new Scene(player, new KeyboardInputHandler()))
             {
                 scene.SubscribeElement(enemy);
                 scene.Play();
