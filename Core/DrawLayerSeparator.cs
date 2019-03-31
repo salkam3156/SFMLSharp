@@ -21,7 +21,7 @@ namespace Game.Core
             return drawables.Where(x => x.GetEntityType() == EntityType.Background).ToList();
         }
 
-        public IList<IEntity> GetNonPlayerActorsLayer()
+        public IList<IEntity> GetNonPlayerEntitiesLayer()
         {
             return drawables.Where(x => x.GetEntityType() == EntityType.Enemy).ToList();
         }

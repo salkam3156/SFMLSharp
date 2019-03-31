@@ -92,7 +92,7 @@ namespace Game.Core
         private void ReevaluateLayerSeparation(object sender, NotifyCollectionChangedEventArgs e)
         {
             backGroundLayer = drawLayerSeparator.GetBackgroundLayer();
-            actorsLayer = drawLayerSeparator.GetNonPlayerActorsLayer();
+            actorsLayer = drawLayerSeparator.GetNonPlayerEntitiesLayer();
             staticElementsLayer = drawLayerSeparator.GetStaticObjectsLayer();
         }
 
