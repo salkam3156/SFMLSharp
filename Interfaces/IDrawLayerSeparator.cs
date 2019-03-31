@@ -8,6 +8,6 @@ namespace SFMLSharp.Interfaces
     {
         IList<IEntity> GetBackgroundLayer();
         IList<IEntity> GetStaticObjectsLayer();
-        IList<IEntity> GetNonPlayerActorsElementsLayer();
+        IList<IEntity> GetNonPlayerActorsLayer();
     }
 }
