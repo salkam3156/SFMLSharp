@@ -21,8 +21,6 @@ namespace Game.Core
         private readonly IInputHandler inputHandler;
         private readonly IDrawLayerSeparator drawLayerSeparator;
 
-
-
         public Scene(IActor player, IInputHandler inputHandler)
         {
             this.inputHandler = inputHandler;
@@ -70,7 +68,6 @@ namespace Game.Core
         private void DrawScene()
         {
             window.Clear();
-            drawableElements.CollectionChanged += ReevaluateLayerSeparation;
 
             foreach (var element in backGroundLayer)
             {
