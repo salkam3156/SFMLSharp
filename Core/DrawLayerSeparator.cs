@@ -10,11 +10,12 @@ namespace Game.Core
 {
     public class DrawLayerSeparator : IDrawLayerSeparator
     {
-        ObservableCollection<IEntity> drawables;
-        public DrawLayerSeparator(ObservableCollection<IEntity> drawableElementsCollection)
+        IList<IEntity> drawables;
+        public DrawLayerSeparator(IList<IEntity> drawableElementsCollection)
         {
             drawables = drawableElementsCollection;
         }
+        
         public IList<IEntity> GetBackgroundLayer()
         {
             return drawables.Where(x => x.GetEntityType() == EntityType.Background).ToList();
