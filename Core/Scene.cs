@@ -3,6 +3,7 @@ using SFML.Window;
 using Game.Interfaces;
 using SFMLSharp.Interfaces;
 using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Text;
 using System.Collections.ObjectModel;
@@ -20,6 +21,9 @@ namespace Game.Core
         private readonly RenderWindow window;
         private readonly IInputHandler inputHandler;
         private readonly IDrawLayerSeparator drawLayerSeparator;
+        private readonly Stopwatch timer = new Stopwatch();
+        private readonly TimeSpan frameTime = new TimeSpan();
+        private readonly TimeSpan innputPollingTime = new TimeSpan();
 
         public Scene(IActor player, IInputHandler inputHandler)
         {
@@ -29,9 +33,12 @@ namespace Game.Core
             this.player = player;
 
             window = new RenderWindow(VideoMode.DesktopMode, "SFML");
-            window.SetFramerateLimit(60);
+            //TODO: make configurable
             window.SetVerticalSyncEnabled(true);
             window.SetMouseCursorVisible(false);
+            frameTime = TimeSpan.FromMilliseconds(1000/60);
+            innputPollingTime = frameTime/2;
+
             window.KeyPressed += (o, e) => { if(e.Alt && Keyboard.IsKeyPressed(Keyboard.Key.C)){ window.Close();} };
 
             drawableElements.CollectionChanged += ReevaluateLayerSeparation;
@@ -54,14 +61,22 @@ namespace Game.Core
                 throw new Exception(@"The player character has not been set");
             }
 
+            timer.Start();
+
             while (window.IsOpen)
             {
                 window.DispatchEvents();
+                
+                if (timer.Elapsed >= innputPollingTime) 
+                {
+                    var inputCommand = inputHandler.HandleIput();
+                    inputCommand?.Execute(player);
+                }
 
-                var inputCommand = inputHandler.HandleIput();
-                inputCommand?.Execute(player);
-
-                DrawScene();
+                if(timer.Elapsed >= frameTime)
+                {
+                    DrawScene();
+                }
             }
         }
 
