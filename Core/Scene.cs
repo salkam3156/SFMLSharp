@@ -35,7 +35,7 @@ namespace Game.Core
             window = new RenderWindow(VideoMode.DesktopMode, "SFML");
             //TODO: make configurable
             window.SetVerticalSyncEnabled(true);
-            window.SetMouseCursorVisible(false);
+            window.SetMouseCursorVisible(true);
             frameTime = TimeSpan.FromMilliseconds(1000/60);
             innputPollingTime = frameTime/2;
 
@@ -66,11 +66,13 @@ namespace Game.Core
             while (window.IsOpen)
             {
                 window.DispatchEvents();
+                player.TurnToCursor(Mouse.GetPosition());
                 
                 if (timer.Elapsed >= innputPollingTime) 
                 {
                     var inputCommand = inputHandler.HandleIput();
                     inputCommand?.Execute(player);
+
                 }
 
                 if(timer.Elapsed >= frameTime)
