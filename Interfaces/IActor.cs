@@ -1,7 +1,7 @@
 using Game.Interfaces;
 using SFML.System;
 
-namespace SFMLSharp.Interfaces
+namespace Game.Interfaces
 {
     public interface IActor : IEntity
     {

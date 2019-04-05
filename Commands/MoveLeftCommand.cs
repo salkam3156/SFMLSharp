@@ -1,5 +1,4 @@
 using Game.Interfaces;
-using SFMLSharp.Interfaces;
 
 namespace Game.Commands
 {
