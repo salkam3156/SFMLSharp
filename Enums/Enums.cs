@@ -10,6 +10,7 @@ namespace Game.Enums
         {
             Player,
             Enemy,
+            Projectile,
             SceneElement,
             Background
         }
