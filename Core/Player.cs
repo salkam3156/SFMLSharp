@@ -35,7 +35,7 @@ namespace Game.Core
         }
         public void TurnToCursor(Vector2i cursorPosition)
         {
-            sprite.Rotation = (float)(-(Math.Atan2(Math.Abs(cursorPosition.X - sprite.Origin.X), Math.Abs(cursorPosition.Y - sprite.Origin.Y)) * 180 / Math.PI));
+            sprite.Rotation = (float)(-(Math.Atan2((cursorPosition.X - sprite.Position.X), (cursorPosition.Y - sprite.Position.Y)) * 180 / Math.PI) + 90);
         }
         public void MoveLeft()
         {
@@ -46,6 +46,7 @@ namespace Game.Core
         {
             sprite.Position += new Vector2f(1 * Speed, 0);
         }
+
         public void MoveDown()
         {
             sprite.Position += new Vector2f(0, 1 * Speed);
