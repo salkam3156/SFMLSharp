@@ -1,4 +1,5 @@
 using Game.Interfaces;
+using SFML.System;
 
 namespace SFMLSharp.Interfaces
 {
@@ -8,5 +9,6 @@ namespace SFMLSharp.Interfaces
          void MoveRight();
          void MoveDown();
          void MoveUp();
+         void TurnToCursor(Vector2i cursorPosition);
     }
 }
