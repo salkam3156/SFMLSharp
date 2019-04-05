@@ -1,3 +1,4 @@
+using System;
 using Game.Enums;
 using Game.Interfaces;
 using SFML.Graphics;
@@ -36,6 +37,12 @@ namespace Game.Factories
         public void SetDirection(Vector2f direction)
         {
             this.direction = direction;
+
+        }
+
+        private void AlignWithShootVector()
+        {
+            sprite.Rotation = (float)(-(Math.Atan2((direction.X - sprite.Position.X), (direction.Y - sprite.Position.Y)) * 180 / Math.PI) + 90);
         }
     }
 }
