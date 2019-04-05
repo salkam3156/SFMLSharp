@@ -37,7 +37,7 @@ namespace Game.Factories
         public void SetDirection(Vector2f direction)
         {
             this.direction = direction;
-
+            AlignWithShootVector();
         }
 
         private void AlignWithShootVector()
