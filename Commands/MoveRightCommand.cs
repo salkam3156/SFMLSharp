@@ -1,7 +1,7 @@
 using Game.Interfaces;
 using SFMLSharp.Interfaces;
 
-namespace Game
+namespace Game.Commands
 {
     internal class MoveRightCommand : ICommand
     {
